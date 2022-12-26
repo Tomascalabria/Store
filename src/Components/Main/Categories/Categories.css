@@ -1,0 +1,54 @@
+@font-face {
+
+    font-family: 'HKGroteskWide-Black' ;
+    src: url('../../../fonts/TTF/HKGroteskWide-Black.ttf') format('truetype');
+
+}
+@font-face {
+
+    font-family: 'HKGroteskWide-Light' ;
+    src: url('../../../fonts/TTF/HKGroteskWide-Light.ttf') format('truetype');
+
+}
+.categories{
+    width: 100%;
+    height: 100%;
+}
+.categories_container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.inner_categorie img{
+ background-repeat: no-repeat;
+ object-fit: cover;
+ width: 325px;
+ height: 325px;
+}
+.categories_epigraph{
+    font-family:'HKGroteskWide-Light' ;
+    font-size: 12.5px;
+    color: #ffff;
+  position: relative;
+  cursor: pointer
+}
+  .categories_epigraph:after {
+    
+    content: '';
+    position: absolute;
+    width: 13%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(252, 242, 184);
+    transform-origin: bottom right;
+    transition: transform 0.45s ease-out;
+  }
+  
+  .categories_epigraph:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }

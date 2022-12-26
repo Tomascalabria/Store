@@ -1,0 +1,48 @@
+@font-face {
+
+    font-family: 'HKGroteskWide-Black' ;
+    src: url('../../../fonts/TTF/HKGroteskWide-Black.ttf') format('truetype');
+
+}
+*{
+    background-color: black;
+}
+.title{
+    font-size: 4.2rem;
+    height: 100px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'HKGroteskWide-Black';
+}
+.title{
+    animation: fadeInAnimation ease 4s;
+    animation-iteration-count: 1;
+    background-color: transparent;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+.hero_nikeLogo{
+    animation: fadeInAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.nike{
+    letter-spacing: 2rem;
+    background-color: 'transparent';
+}
