@@ -23,8 +23,8 @@ const handleScroll=(e)=>{
           </div>
           <div className='NavBar_top_auth_section' style={{width:'50%',justifyContent:'flex-end',display:'flex', flexDirection:'row',alignContent:'center'}}>
             <div className='NavBar_top_auth_container' style={{ gap:'1rem',marginRight:'3em'}}> 
-            <Link to={'/Login'}><button className='authButton' >LOGIN</button></Link>
-            <Link to={'/Register'}><button  className='authButton'> REGISTER</button></Link>
+            <Link to={'/Login'}><button className='authButton' >INGRESAR</button></Link>
+            <Link to={'/Register'}><button  className='authButton'> REGISTRARME</button></Link>
             <CartIcon/>
               </div>
             

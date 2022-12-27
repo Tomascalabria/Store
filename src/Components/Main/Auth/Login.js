@@ -12,7 +12,7 @@ export const Login = () => {
     
     <div className='login_form_container auth_form_container'>
     <form className='login_form auth_form'>
-      <h2 className='auth_form_title login_form_title'>Login</h2>
+      <h2 className='auth_form_title login_form_title'>Ingreso</h2>
      
       <div className='login_email_container auth_email_container'>
       {/* <label className='login_form_email_label auth_email_label'>Email</label> */}
