@@ -1,15 +1,4 @@
-@font-face {
 
-    font-family: 'HKGroteskWide-Black' ;
-    src: url('../../../fonts/TTF/HKGroteskWide-Black.ttf') format('truetype');
-
-}
-@font-face {
-
-    font-family: 'HKGroteskWide-Light' ;
-    src: url('../../../fonts/TTF/HKGroteskWide-Light.ttf') format('truetype');
-
-}
 .categories{
     width: 100%;
     height: 550px;

@@ -1,15 +1,3 @@
-@font-face {
-
-    font-family: 'HKGroteskWide-Black' ;
-    src: url('../../fonts/TTF/HKGroteskWide-Black.ttf') format('truetype');
-
-}
-@font-face {
-
-    font-family: 'HKGroteskWide-Light' ;
-    src: url('../../fonts/TTF/HKGroteskWide-Light.ttf') format('truetype');
-
-}
 
 .navBar_main_title{
     font-family:'HKGroteskWide-Light' ;
@@ -50,9 +38,35 @@
     color:#ffff;
     background-color: transparent;
     font-size: '0.85rem';
+    border-radius: 25px;
+    border-color: transparent;
     font-family:'HKGroteskWide-Light' ;
     font-weight: lighter    ;
     cursor: pointer;
+    font-weight: 100    ;
+    position: relative;
+
+  }
+
+ 
+.authButton:after {
+    
+    content: '';
+    position: absolute;
+    margin-left: 6px;
+    width: 55%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 230, 87, 0.801);
+    transform-origin: bottom right;
+    transition: transform 0.45s ease-out;
+  }
+  
+  .authButton:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
   
  
@@ -60,6 +74,7 @@
     width: 25px;
     height: 25px;
     color: #ffff;
+    cursor: pointer;
   }
   .discounts_container{
    width: 100%;

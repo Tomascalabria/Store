@@ -19,7 +19,7 @@ const handleScroll=(e)=>{
       <div className='NavBar_top_container' style={{height:'30%',width:'100%',margin:'0rem 0.9rem',display:'flex',justifyContent:'center', alignItems:'center'}}>
         
          <div className='NavBar_top_logo_section' style={{flex:'1',width:'50%'}} >
-          <img src={navBarLogo} alt='Navbar logo - Sneaker or shoe' style={{width:'60px',height:'60px'}}></img>
+         <Link to='/'> <img src={navBarLogo} alt='Navbar logo - Sneaker or shoe' style={{width:'60px',height:'60px'}}></img></Link>
           </div>
           <div className='NavBar_top_auth_section' style={{width:'50%',justifyContent:'flex-end',display:'flex', flexDirection:'row',alignContent:'center'}}>
             <div className='NavBar_top_auth_container' style={{ gap:'1rem',marginRight:'3em'}}> 
