@@ -10,16 +10,13 @@
     src: url('../../fonts/TTF/HKGroteskWide-Light.ttf') format('truetype');
 
 }
-.navBar_main_title{
-    color:#ffffffde;
-    background-color: transparent;
-    font-size: '1rem';
-    font-family:'HKGroteskWide-Black' ;
-    font-weight: 100    ;
-}
+
 .navBar_main_title{
     font-family:'HKGroteskWide-Light' ;
+    font-weight: 100    ;
     font-size: 12.5px;
+    background-color: transparent;
+
     color: #ffff;
   position: relative;
   cursor: pointer
@@ -42,12 +39,27 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+  .NavBar_top_auth_container {
+ 
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
   .authButton{
     color:#ffff;
     background-color: transparent;
     font-size: '0.85rem';
     font-family:'HKGroteskWide-Light' ;
     font-weight: lighter    ;
+    cursor: pointer;
+  }
+  
+ 
+  .shopping_cart {
+    width: 25px;
+    height: 25px;
+    color: #ffff;
   }
   .discounts_container{
    width: 100%;

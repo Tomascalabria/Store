@@ -15,7 +15,7 @@
     background-color: transparent;
     color: #ffffff;
     font-family: 'HKGroteskWide-Light';
-    text-shadow: -1px 0 rgb(252, 242, 184), 0 1px rgb(252, 242, 184), 1px 0 rgb(252, 242, 184), 0 -1px rgb(252, 242, 184);
+    text-shadow: -1px 0 rgb(68, 47, 3), 0 1px rgb(68, 47, 3), 1px 0 rgb(68, 47, 3), 0 -1px rgb(68, 47, 3);
 }
 
 
@@ -46,8 +46,4 @@
     100% {
         opacity: 1;
     }
-}
-.nike{
-    letter-spacing: 2rem;
-    background-color: 'transparent';
 }
