@@ -5,24 +5,12 @@ import { TitleTransition } from './TitleTransition'
 
 export const Hero = () => {
   return (<>
-  <section className='hero' style={{width:'100%',height:'600px',display:'flex',flexDirection:'row'}} >
+  <section className='hero' style={{width:'100%',height:'500px',display:'flex',flexDirection:'row'}} >
+
   
-<div className='left_hero_contaier' style={{height:'100%',width:'25%'}}>
-    <div className='left_hero' style={{height:'100%',width:'100%'}}>
-  
-    
-    </div>
-  </div>
-  <div className='main_hero_contaier' style={{display:'flex',height:'100%',width:'50%',flexDirection:'column', textAlign:'center',alignContent:'center', justifyContent:'center'}}>
-    <h2 className='title'>ULTIMATE</h2>
-    
-    <div style={{width:'100%',justifyContent:'center',textAlign:'center',alignContent:'center'}}>
+    <div style={{width:'100%',height:'10%',justifyContent:'center',textAlign:'center',marginTop:'0.5rem',alignContent:'center',borderBottom: 'solid 1px rgb(252, 242, 184)'  }}>
     <TitleTransition  />
     </div>
-    <h2 className='title'>STORE</h2>
-    </div>
-    <div className='right_hero_contaier' style={{height:'100%',width:'25%'}}>
-  </div>
     </section>
     </>
   )

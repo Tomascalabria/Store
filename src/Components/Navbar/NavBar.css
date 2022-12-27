@@ -1,0 +1,70 @@
+@font-face {
+
+    font-family: 'HKGroteskWide-Black' ;
+    src: url('../../fonts/TTF/HKGroteskWide-Black.ttf') format('truetype');
+
+}
+@font-face {
+
+    font-family: 'HKGroteskWide-Light' ;
+    src: url('../../fonts/TTF/HKGroteskWide-Light.ttf') format('truetype');
+
+}
+.navBar_main_title{
+    color:#ffffffde;
+    background-color: transparent;
+    font-size: '1rem';
+    font-family:'HKGroteskWide-Black' ;
+    font-weight: 100    ;
+}
+.navBar_main_title{
+    font-family:'HKGroteskWide-Light' ;
+    font-size: 12.5px;
+    color: #ffff;
+  position: relative;
+  cursor: pointer
+}
+  .navBar_main_title:after {
+    
+    content: '';
+    position: absolute;
+    width: 80%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 230, 87, 0.801);
+    transform-origin: bottom right;
+    transition: transform 0.45s ease-out;
+  }
+  
+  .navBar_main_title:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .authButton{
+    color:#ffff;
+    background-color: transparent;
+    font-size: '0.85rem';
+    font-family:'HKGroteskWide-Light' ;
+    font-weight: lighter    ;
+  }
+  .discounts_container{
+   width: 100%;
+   height: 310px; 
+   display: flex;
+   flex: row;
+   align-items: center;
+   align-content: center;
+   padding: 0 1rem;
+  }
+  .discounts_container_img{
+    width: 65%;
+    height: 95%;
+    border-right: #ffff solid 2px ;
+  }
+    .discounts_container_img img{
+      width: 80%;
+      height: 60%;
+      object-fit: contain;
+}

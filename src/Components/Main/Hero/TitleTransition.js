@@ -4,7 +4,7 @@ import ReactTextTransition from "react-text-transition";
 const randomNumber = () => Math.floor(Math.random() * 9999999999 + 100000);
 
  export const TitleTransition = () => {
-  const texts = [" NIKE ", " ADIDAS ", " ASYCS ", " SUPREME ", " LEVIS", " GUCCI "];
+  const texts = [" NIKE ", " ADIDAS ", " ASYCS ", " SUPREME ", " LEVIS", "TOMMY HILFIGER "];
 
   const [number, setNumber] = useState(randomNumber());
   
@@ -33,7 +33,7 @@ const randomNumber = () => Math.floor(Math.random() * 9999999999 + 100000);
     <React.Fragment>
           <ReactTextTransition
             className="title"   
-            style={{ margin: "0rem 4px" ,background:'transparent'}}
+            style={{ margin: "0rem 4px" ,background:'transparent',}}
             inline
           >
             {texts[textFastIndex % texts.length]}
