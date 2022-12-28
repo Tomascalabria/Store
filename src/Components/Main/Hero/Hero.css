@@ -43,7 +43,7 @@
 }
 .banner {
     width: 100%;
-    height: 400px;
+    height: 500px;
     object-fit: contain;
     display:contents;
     justify-content: center;
@@ -51,22 +51,31 @@
 .banner img{
     border: none;
     object-fit: cover;
-    width: 80%;
-    height: 400px;}
-
+    width: 85%;
+    height: 400px;
+}
+.banner_text_container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 90%;
+    text-align: center;
+    margin-top: -2rem;
+    height: 20px;
+    
+}
 .banner_text{
     display: flex;
-    position: absolute;
+    position: relative;
     align-items:center;
     justify-content: center;
-    top: 82%;
     border-radius: 10px;
-    right: 6.5%;
     flex-direction: row;
     width: 30%;
     background-color: transparent;
     font-weight: 500;
     font-family:'HKGroteskWide-light' ;
+
 
 }
 .banner_text h2{
