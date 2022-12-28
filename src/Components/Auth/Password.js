@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import hide_password_icon from  '../../../Media/hide_password_icon.png'
-import show_password_icon from  '../../../Media/show_password_icon.png'
+import hide_password_icon from  '../../Media/hide_password_icon.png'
+import show_password_icon from  '../../Media/show_password_icon.png'
 
 export const Password=()=>{
     const [passwordType, setPasswordType] = useState("password");

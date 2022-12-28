@@ -1,10 +1,12 @@
-
+a {
+  text-decoration: none;
+}
 .navBar_main_title{
     font-family:'HKGroteskWide-Light' ;
     font-weight: 100    ;
     font-size: 12.5px;
     background-color: transparent;
-
+  
     color: #ffff;
   position: relative;
   cursor: pointer

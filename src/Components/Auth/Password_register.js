@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import hide_password_icon from  '../../../Media/hide_password_icon.png'
-import show_password_icon from  '../../../Media/show_password_icon.png'
+import hide_password_icon from  '../../Media/hide_password_icon.png'
+import show_password_icon from  '../../Media/show_password_icon.png'
 
 export const Password_register=()=>{
     const [firstPasswordType, setFirstPasswordType] = useState("password");
@@ -39,7 +39,7 @@ export const Password_register=()=>{
             <div className="auth_password_container password_register_container">
                 <div className="first_password_container">
                     <input type={firstPasswordType} onChange={handleFirstPasswordChange} value={firstPasswordInput} name="password" className="register_form_password_input auth_password_input" placeholder="CONTRASEÑA" />
-                     <button className="show_password_btn" onClick={toggleFirstPassword}>
+                     <button className="show_password_btn" onClick={toggleFirstPassword}>   
                      { firstPasswordType==="password"? <img className="show_password_icon" alt="show password logo.png"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
                      </button>
                 </div>

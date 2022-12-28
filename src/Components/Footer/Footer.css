@@ -47,13 +47,13 @@ flex-direction: 2;
 .footer_inner_container_two input{
     width: 75%;
     height: 55px;   
-    font-family: 'HKGroteskWide-light';
     border: #fffffe solid 2px;
-    color:  #ffff;
-    font-weight: bolder;
+    color: #ffff;
+    font-family: 'HKGroteskWide-Light';
+    font-weight: 500;
 }
 .footer_inner_container_two input:focus{
-       background-color: rgb(85, 83, 83);
+       background-color: rgba(41, 41, 41, 0.897);
     
 }
 .footer_contact_button{

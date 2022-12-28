@@ -1,6 +1,6 @@
 import React from 'react'
 import './Auth.css'
-import login_banner from '../../../Media/login_banner.webp'
+import login_banner from '../../Media/login_banner.webp'
 import { Password_register } from './Password_register'
 export const Register = () => {
   return (
@@ -23,7 +23,6 @@ export const Register = () => {
       <Password_register/>
 
           <button className='form_button'>Registrarme</button>
-        <p className='auth_password_recovery'>Olvide mi contraseña</p>
     </form>
     </div>
     </div>
