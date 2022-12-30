@@ -2,20 +2,31 @@ import React, { useState } from 'react'
 import './Products.css'
 
 export const ProductImg = ({props}) => {
-const [hover,setHover]=useState(false)
-return (<>
-{
-    hover?
+const [image_1,setImage_1]=useState(true)
+return (
+
 <>
 <div className='img_banner'>
-<img className='img_hover' src={props.img_1} alt={`Product: ${props.name} card`} onMouseEnter={()=>setHover(true)}onMouseLeave={()=>setHover(false)}/>
-    <h3 className='img_hover_text'>add to cart</h3>
+    {image_1? <>
+<img className='img_hover' src={props.img_1} alt={`Product: ${props.name} card`} />
+<div className='img_miniature'>
+    <img className='img_miniature_1' src={props.img_1}  onClick={()=>setImage_1(true)} />
+    <img className='img_miniature_2' src={props.img_2} onClick={()=>setImage_1(false)}   />
+</div>
+    </>
+:
+<>
+<img className='img_hover' src={props.img_2} alt={`Product: ${props.name} card`} />
+<div className='img_miniature'>
+    <img className='img_miniature_1' src={props.img_1}   onClick={()=>setImage_1(true)}  />
+    <img className='img_miniature_2' src={props.img_2}  onClick={()=>setImage_1(false)}    />
 </div>
 </>
-:
-<img className='img_no_hover' src={props.img_1} alt={`Product: ${props.name} card`} onMouseEnter={()=>setHover(true)}onMouseLeave={()=>setHover(false)}/>
 }
+</div>
 </>
+
+
 
     )
 }

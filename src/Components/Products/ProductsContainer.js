@@ -3,12 +3,15 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import './Products.css'
 import { ProductCard } from './ProductCard'
+import { Loader } from './Loader'
 
 export const ProductsContainer = () => {
 const [products,setProducts]=useState([])
+const [loader,setLoader]=useState([false])
 const {category}=useParams()
 
 const getProducts =async()=>{   
+  setLoader(true)
 const response= await axios({
     method:'GET',
     url:`http://localhost:5050/spreadsheet`
@@ -18,6 +21,7 @@ const response= await axios({
     let filteredProducts=data.filter(item=>{return item.category===category  })
   
     setProducts(filteredProducts)
+    setLoader(false)
 })
 .catch((err)=>{
     console.log(err)
@@ -33,8 +37,14 @@ console.log(item)
 
   return (
     <>
+    
   <section className='products_container'>
-    <div className='products_container_separator'></div>
+  <div className='products_container_separator'></div>
+
+  {
+loader?
+    <Loader/>:
+    <>
   <div className='products_inner_container'>
 
     {products.map((product)=>{ 
@@ -46,9 +56,12 @@ return(
 )
 })}
 </div>
+</>
+}
+</section>
 
-  </section>
     </>
+
 
     )
 }
