@@ -6,15 +6,16 @@
     flex-wrap: nowrap;
 }
 .auth_banner{
-    width: 45%;
+    width: 40%;
     height: 100%;   
-
+    object-fit: contain;
 }
 .auth_banner_img{
+    border-radius:25px;
     margin: 10px 10px ;
     padding: 10px;
-    height: 100%;
-    width: 95%;
+    height: 90%;
+    width: 90%;
     
 }
 .auth_form_container{

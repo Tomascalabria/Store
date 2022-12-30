@@ -1,9 +1,9 @@
 import React from 'react'
 import {Navigate, Route,Routes} from 'react-router-dom'
 import { Main } from '../Main/Main'
-import { Products } from '../Products/Products'
 import {Login} from '../Auth/Login'
 import {Register} from '../Auth/Register'
+import { ProductsContainer } from '../Products/ProductsContainer'
 export const Routing = () => {
   return (
     <>    
@@ -13,7 +13,7 @@ export const Routing = () => {
     <Route path='/Register' element={<Register/>}/>
     <Route path='/Home'  element={<Main/>}/>
     <Route path='/' element={<Main/>}/>
-    <Route path="/:category" element={ <Products/>} />
+    <Route path="/:category" element={ <ProductsContainer/>} />
     <Route path="/*" element={ <Navigate to={'/'} /> } />
     
 </Routes >

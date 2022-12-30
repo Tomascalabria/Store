@@ -1,6 +1,6 @@
 import React from 'react'
 import './Auth.css'
-import login_banner from '../../Media/login_banner.webp'
+import login_banner from '../../Media/banner_2.jpg'
 import { Password_register } from './Password_register'
 export const Register = () => {
   return (

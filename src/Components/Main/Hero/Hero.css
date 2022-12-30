@@ -55,7 +55,7 @@
     height: 400px;
 }
 .banner_text_container{
-    display: flex;
+    display: flex; 
     align-items: flex-start;
     justify-content: flex-end;
     width: 90%;

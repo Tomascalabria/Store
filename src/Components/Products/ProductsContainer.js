@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { ProductDetail } from './ProductDetail'
+import './Products.css'
+import { ProductCard } from './ProductCard'
 
-export const Products = () => {
+export const ProductsContainer = () => {
 const [products,setProducts]=useState([])
 const {category}=useParams()
 
@@ -27,17 +28,20 @@ useEffect(()=>{
     getProducts()
 },[category])
 
+let item=products.filter((product)=>{return product.category==='vestimenta'})
+console.log(item)
+
   return (
     <>
   <section className='products_container'>
+    <div className='products_container_separator'></div>
   <div className='products_inner_container'>
+
     {products.map((product)=>{ 
-
-
+      
 return(
-
 <>
-<ProductDetail key={product._id} props={{...product}} />
+<ProductCard props={product} key={product._id}/> 
 </>
 )
 })}
