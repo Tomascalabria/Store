@@ -5,25 +5,28 @@ import clothes_categories_portrait from '../../../Media/Clothes_categories_portr
 import accesories_categories_portrait from '../../../Media/Accesories_categories_portrait.webp'
 import discount_banner from '../../../Media/winter_sale_discount_banner.jpg'
 import { Link } from 'react-router-dom'
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
 export const Categories = () => {
 
   return (
    <>
    <section className='categories' >
       <div className='categories_container'>
-        <div className='inner_categorie categories_clothing'>
+      <Link to={'/vestimenta'} onClick={scrollToTop}>  < div className='inner_categorie categories_clothing'>
           <img src={clothes_categories_portrait} alt='products categories portrait - clothing categories'></img>
-          <Link to={'/vestimenta'}>   <p className='categories_epigraph'>Vestimenta</p></Link>
-        </div>
-        <div className='inner_categorie categories_shoes'>
+            <p className='categories_epigraph'>Vestimenta</p>
+        </div></Link>
+        <Link to={'/calzado'} onClick={scrollToTop}>   <div className='inner_categorie categories_shoes'>
         <img src={shoes_categories_portrait} alt='products categories portrait - shoes categories'></img>
-       <Link to={'/calzado'}> <p className='categories_epigraph'>Calzado</p></Link>
+        <p className='categories_epigraph'>Calzado</p>
 
-        </div>
-        <div className='inner_categorie categories_accesories'>
+        </div></Link>
+        <Link to={'/accesorios'} onClick={scrollToTop}><div className='inner_categorie categories_accesories'>
           <img src={accesories_categories_portrait} alt='products categories portrait - accesories categories'></img>
-          <Link to={'/accesorios'}><p className='categories_epigraph'>Accesorios</p></Link>
-        </div>
+            <p className='categories_epigraph'>Accesorios</p>
+        </div></Link>
       </div>
    </section>
    <section className='discounts'>
@@ -38,3 +41,4 @@ export const Categories = () => {
    </>
   )
 }
+  

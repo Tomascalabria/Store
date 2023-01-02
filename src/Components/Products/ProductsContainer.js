@@ -5,7 +5,7 @@ import './Products.css'
 import { ProductCard } from './ProductCard'
 import { Loader } from './Loader'
 
-export const ProductsContainer = () => {
+export const  ProductsContainer = () => {
 const [products,setProducts]=useState([])
 const [loader,setLoader]=useState([false])
 const {category}=useParams()
@@ -14,13 +14,11 @@ const getProducts =async()=>{
   setLoader(true)
 const response= await axios({
     method:'GET',
-    url:`http://localhost:5050/spreadsheet`
+    url:`http://localhost:5050/products`
 })
 .then((response)=>{
     const data =response.data.products
-    let filteredProducts=data.filter(item=>{return item.category===category  })
-  
-    setProducts(filteredProducts)
+    setProducts(data)
     setLoader(false)
 })
 .catch((err)=>{
@@ -32,12 +30,11 @@ useEffect(()=>{
     getProducts()
 },[category])
 
-let item=products.filter((product)=>{return product.category==='vestimenta'})
-console.log(item)
+let item=products.filter((product)=>{return product.category===category})
+
 
   return (
     <>
-    
   <section className='products_container'>
   <div className='products_container_separator'></div>
 
@@ -46,15 +43,25 @@ loader?
     <Loader/>:
     <>
   <div className='products_inner_container'>
+   {item.length===0 ?
 
-    {products.map((product)=>{ 
-      
-return(
-<>
+
+    <>
+    <h2 className='no_items_alert' >Estamos renovando los productos de esta categoria.</h2>
+    <h2></h2>
+    </>
+
+  :
+
+   products.map((product)=>{ 
+     
+     return(
+       <>
 <ProductCard props={product} key={product._id}/> 
 </>
 )
-})}
+})
+}
 </div>
 </>
 }

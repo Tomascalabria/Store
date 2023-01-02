@@ -17,21 +17,21 @@
 .footer_inner_container_one{
 color: #ffff;
 width: 35%;
-
+margin: 20px auto;
 }
 .main_footer_text{
     color: rgba(255, 255, 255, 0.925) ;
     font-family: 'HKGroteskWide-Medium' ;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     font-weight: 200    ;  
-    text-align:center;  
+    text-align:normal;  
     margin-left: 1.9rem;
     font-size: 1.7rem;
 }
 .main_footer_text_p{
     font-family: 'HKGroteskWide-light' ;
     width: 100%;
-    text-align: center;
+    text-align: normal;
     font-weight: lighter   ;
     font-size: 0.82rem;
     color: #ffff;
