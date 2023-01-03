@@ -31,10 +31,8 @@ const {addToCart}=useContext(CartContext)
     getProduct()
     },[id])
 
-    // const shoesSizes = Object.keys(product.shoes_sizes).filter((availability) =>{return product.shoes_sizes[availability]==='TRUE'});
-    // const clothesSizes = Object.keys(product.clothes_sizes).filter((availability) =>{return product.clothesSizes[availability]==='TRUE'});
-
-    
+    const shoesSizes = product.shoes_sizes ? Object.keys(product.shoes_sizes).filter((availability) =>{return product.shoes_sizes[availability]==='TRUE'}) : [];
+const clothesSizes = product.clothes_sizes ? Object.keys(product.clothes_sizes).filter((availability) =>{return product.clothesSizes[availability]==='TRUE'}) : [];
 
   return (
     loader?<Loader/> :
@@ -45,22 +43,24 @@ const {addToCart}=useContext(CartContext)
       
       </div>  
       <div className='product_detail_text_container'>
+        <div className='product_detail_title_container'>
         <h2>{product.name}</h2>
+        </div>
+        <div className='product_detail_description_container'>
         <p>{product.description}</p>
+        </div>
 
         <div className='product_select'>
-        <form>
-        <label >Elija un talle</label>
-        <select name="size" title='size'  id={`${product.shoes_sizes ||product.clothes_sizes}`}/>
-            
-        {/* {shoesSizes.map((size)=>{
+          <h4> Talles </h4>
+          <div className='product_select_sizes'>
+          {shoesSizes.map((size)=>{
           return(
-            <h2>{size}</h2>
-          ) */}
-    
-    
-        </form>
+            <button  value={size} className='size_button'>{size} </button>
+            )
+          })}
+          </div>
         </div>
+       
       </div>
       </div>
 </>

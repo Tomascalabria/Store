@@ -23,10 +23,10 @@ color: white;
     width: 100%;
 }
 .product_card{
-    width: 320px;
+    width: 250px;
     height: 350px;
     color: white;
-    margin: 40px;
+    margin: 30px;
     cursor: pointer;
 }
 .product_card img{
@@ -50,14 +50,34 @@ align-items: center;
   
 }
 .product_title{
-    font-family: 'HKGroteskWide-Light';
-    font-weight: lighter;
-    font-size: .95rem;
-    letter-spacing: 1px;
-
-
-    
+  font-family: 'HKGroteskWide-Light';
+  font-weight: lighter;
+  font-size: .95rem;
+  letter-spacing: 1px;    
+  cursor: pointer;
+  position: relative;
 }
+.product_title:after {
+    
+  content: '';
+  position: absolute;
+  margin-left: 6px;
+  width: 55%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 230, 87, 0.801);
+  transform-origin: bottom right;
+  transition: transform 0.45s ease-out;
+}
+
+.product_title:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
 .product_price{
     font-size: .85rem;
     letter-spacing: 1px;
@@ -130,7 +150,6 @@ align-content: center;
 }
 .product_detail_img{
   width: 90%;
-  
   height: 100%;
   
 }
@@ -138,7 +157,46 @@ align-content: center;
   width: 50%;
   height: 100%;
   color: white;
+
 }
+.product_detail_title_container{
+  height: 100%;
+  width: 90%; 
+  font-family: 'HKGroteskWide-medium';
+  font-weight: lighter;
+  letter-spacing: 1.9px;
+  display: flex;
+  justify-content: center;
+}
+.product_detail_description_container{
+width: 90%;
+display: flex;
+justify-content: center;
+}
+.product_select_sizes{
+  width: 80%;
+  height: 160px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.size_button{
+  background-color: transparent;
+  color: white;
+  border: solid white 1.4px;
+  margin: 0 10px;
+  font-family: 'HKGroteskWide-medium';
+  letter-spacing: .8px;
+  width: 50px;
+  height: 50px;
+}
+.size_button:hover{
+  background-color: rgb(79, 78, 78);
+  cursor: pointer;
+}
+
 
 /* LOADER.. */
 .loader_container{
