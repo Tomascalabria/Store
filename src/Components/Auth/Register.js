@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './Auth.css'
 import login_banner from '../../Media/banner_2.jpg'
 import { Password_register } from './Password_register'
 export const Register = () => {
+const [email,setEmail]=useState('')
+const [username,setUsername]=useState('')
+const [password_1,setPassword_1]=useState('')
+const [password_2,setPassword_2]=useState('')
+  const handleEmail=()=>{
+      
+  }
   return (
+  
     <>
     <div className=' authContainer'>
   <div className='login_banner auth_banner' >
@@ -16,11 +24,16 @@ export const Register = () => {
      
       <div className='login_email_container auth_email_container'>
       {/* <label className='login_form_email_label auth_email_label'>Email</label> */}
-      <input  name='email' type='email' className='login_form_email_input auth_email_input' placeholder='EMAIL'></input>
+      <input type='email' className='login_form_email_input auth_email_input' value={email} placeholder='EMAIL'></input>
+      </div>
+
+      
+      <div className='login_email_container auth_email_container'>
+      <input   type='username' className='login_form_email_input auth_email_input' value={username} placeholder='username'></input>
       </div>
       
       {/* <label className='login_form_password_label auth_password_label'>contraseña</label> */}
-      <Password_register/>
+      <Password_register props={{password_1,password_2,setPassword_2,setPassword_1}}/>
 
           <button className='form_button'>Registrarme</button>
     </form>

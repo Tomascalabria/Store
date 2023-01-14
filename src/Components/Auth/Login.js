@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Auth.css'
 import login_banner from '../../Media/login_banner.webp'
 import { Password } from './Password'
-import axios from 'axios'
 import { validateEmail } from '../../handlers/validateEmail'
 import { useNavigate } from 'react-router-dom'
+import {AuthContext} from '../../Context/Auth/AuthContext'
+import {loginProcess} from '../../Context/Auth/ApiCall'
 export const Login = () => {
 const [email,setEmail]=useState('') 
 const [password,setPassword]=useState('') 
 const [emailValidation,setEmailValidation]=useState('')
 const navigate=useNavigate()
+
+const {user,error}=useContext(AuthContext) 
+const { dispatch } = useContext(AuthContext);
+
 
 const handleEmailChange=(e)=>{
 e.preventDefault()
@@ -23,22 +28,13 @@ setEmailValidation('')
 }
 }
 
-
-  const handleLogin=async(e)=>{
-  e.preventDefault()
-    const response = await axios.post('http://localhost:5050/auth/login',{
-      email:email,
-      password:password,
-    })
-    .then((res)=>{
-        console.log(res.data)
-      setTimeout(()=>{
-        navigate('/')
-      },2000)
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+const handleLogin=async(e)=>{
+  e.preventDefault()  
+  loginProcess({email:email,password:password},dispatch)
+  setTimeout(() => {
+    navigate('/')
+    
+  }, 1500);  
   }
   
   return (
@@ -65,6 +61,7 @@ setEmailValidation('')
           <button type='submit' className='form_button'>Ingresar</button>
         <p className='auth_password_recovery'>Olvide mi contraseña</p>
     </form>
+
     </div>
     </div>
     </>

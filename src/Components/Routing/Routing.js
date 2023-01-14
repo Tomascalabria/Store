@@ -1,10 +1,10 @@
 import React from 'react'
 import {Navigate, Route,Routes} from 'react-router-dom'
 import { Main } from '../Main/Main'
-import {Login} from '../Auth/Login'
 import {Register} from '../Auth/Register'
 import { ProductsContainer } from '../Products/ProductsContainer'
 import { ProductDetail } from '../Products/ProductDetail'
+import { Login } from '../Auth/Login'
 export const Routing = () => {
   return (
     <>    
