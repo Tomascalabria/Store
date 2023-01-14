@@ -14,10 +14,11 @@ const getProducts =async()=>{
   setLoader(true)
 const response= await axios({
     method:'GET',
-    url:`http://localhost:5050/products`
+    url:`http://localhost:5050/products/`
 })
 .then((response)=>{
-    const data =response.data.products
+    const data =response.data.data
+    console.log()
     setProducts(data)
     setLoader(false)
 })
@@ -30,8 +31,7 @@ useEffect(()=>{
     getProducts()
 },[category])
 
-let item=products.filter((product)=>{return product.category===category})
-
+let item=products.filter((product)=>{return product.product_category.toLowerCase()===category})
 
   return (
     <>
@@ -57,7 +57,7 @@ loader?
      
      return(
        <>
-<ProductCard props={product} key={product._id}/> 
+<ProductCard props={product} key={product.product_id}/> 
 </>
 )
 })

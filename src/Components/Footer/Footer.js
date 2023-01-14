@@ -15,6 +15,9 @@ export const Footer = () => {
         <input placeholder='Dejanos tu Mail' ></input>
         <button className='footer_contact_button'> Enviar</button>
         </div>
+        <div className='footer_terms'>
+
+        </div>
     </div>
     </footer>
   )
