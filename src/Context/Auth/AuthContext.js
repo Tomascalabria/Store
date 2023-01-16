@@ -1,25 +1,31 @@
 import { createContext, useEffect, useReducer } from "react"
-import AuthReducer from "./AuthReducer"
+import LoginReducer from "./LoginReducer"
+import RegisterReducer from "./RegisterReducer"
 
 const initialState={
     user:JSON.parse(localStorage.getItem('session')) || null,
     isFetching:false,
     error:false
 }
-
+const InitialregistrationState={
+    user: null,
+    isFetching: false,
+    error: false
+}
 export const AuthContext=createContext(initialState)
 
 
 
 export const AuthContextProvider=({children})=>{
-    const [state, dispatch]=useReducer(AuthReducer,initialState)
+    const [state, dispatch]=useReducer(LoginReducer,initialState)
+    const [registrationState,dispatchRegistration]=useReducer(RegisterReducer,InitialregistrationState)
     useEffect(()=>{
         localStorage.setItem('session',JSON.stringify(state.user))
         // localStorage.setItem('token',JSON.stringify((state.token)))
-    },[state.user])
+    },[state.user,registrationState.user])
    
     return(
-        <AuthContext.Provider value={{user:state.user,isFetching:state.isFetching,error:state.error,dispatch:dispatch}}>
+        <AuthContext.Provider value={{user:state.user,isFetching:state.isFetching,error:state.error,dispatch:dispatch,registrated_user:registrationState.user,registration_error:registrationState.error,dispatchRegistration}}>
 
             {children}
 

@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext,  useState } from 'react'
 import './Auth.css'
 import login_banner from '../../Media/login_banner.webp'
 import { Password } from './Password'
-import { validateEmail } from '../../handlers/validateEmail'
+import { validateEmail,InvalidMsg } from '../../handlers/handlers'
 import { useNavigate } from 'react-router-dom'
 import {AuthContext} from '../../Context/Auth/AuthContext'
 import {loginProcess} from '../../Context/Auth/ApiCall'
@@ -31,6 +31,7 @@ setEmailValidation('')
 const handleLogin=async(e)=>{
   e.preventDefault()  
   loginProcess({email:email,password:password},dispatch)
+  console.log(user||error)
   setTimeout(() => {
     navigate('/')
     
@@ -51,7 +52,7 @@ const handleLogin=async(e)=>{
      
       <div className='login_email_container auth_email_container'>
       {/* <label className='login_form_email_label auth_email_label'>Email</label> */}
-      <input  onChange={handleEmailChange} value={email} type='email' className='login_form_email_input auth_email_input' placeholder='EMAIL'></input>
+      <input onInvalid={(e)=>{InvalidMsg(e.currentTarget)}} onChange={handleEmailChange} value={email} type='email' className='login_form_email_input auth_email_input' placeholder='EMAIL'></input>
         <span style={{color:'red',fontSize:'.9rem'}}>{emailValidation}</span>
       </div>
       

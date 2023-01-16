@@ -14,7 +14,7 @@ const {addToCart}=useContext(CartContext)
   const getProduct=async()=>{
     const response= await axios({
       method:'GET',
-      url:`http://localhost:5050/product/${id}`
+      url:`http://localhost:8080/product/${id}`
   })
   .then((response)=>{
     const data =response.data.product

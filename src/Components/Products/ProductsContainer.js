@@ -14,7 +14,7 @@ const getProducts =async()=>{
   setLoader(true)
 const response= await axios({
     method:'GET',
-    url:`http://localhost:5050/products/`
+    url:`http://localhost:8080/products/`
 })
 .then((response)=>{
     const data =response.data.data
