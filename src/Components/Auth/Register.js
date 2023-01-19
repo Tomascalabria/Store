@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Auth.css'
 import login_banner from '../../Media/banner_2.jpg'
 import { PasswordRegister } from './Password_register'
@@ -12,10 +13,13 @@ const [usernameValidation,setUsernameValidation]=useState('')
 const [password_1,setPassword_1]=useState('')
 const [password_2,setPassword_2]=useState('')
 const [emailValidation,setEmailValidation]=useState('')
+const [registrationMessage,setRegistrationMessage]=useState(false)
 const [passwordsValidation,setPasswordsValidation]=useState(false)
 const {dispatchRegistration}=useContext(AuthContext)
 const {registration_error}=useContext(AuthContext)
 const {registrated_user}=useContext(AuthContext)
+const navigate=useNavigate()
+
 const handleEmailChange=(e)=>{
   e.preventDefault()
   setEmail(e.target.value)
@@ -40,16 +44,19 @@ const handleEmailChange=(e)=>{
       username:username,
       email:email,
       password:password_1},dispatchRegistration)
-      registrated_user?console.log('Usuario Registrado con exito') :console.log(registration_error)  
+    setRegistrationMessage(true)
     }
     else{
-      console.log({
-        error:'Please check that the entered information is compliant to our terms of subscription'
-      })
+      console.log({registration_error})
     }
     
   }
- 
+  registrationMessage?setTimeout(() => {
+    setRegistrationMessage(false)
+    navigate('/')
+  }, 2000):<></>
+  
+
 
   return (
   
@@ -75,7 +82,8 @@ const handleEmailChange=(e)=>{
       
       {/* <label className='login_form_password_label auth_password_label'>contraseña</label> */}
       <PasswordRegister  props={{password_1,password_2,setPassword_2,setPassword_1,passwordsValidation,setPasswordsValidation}}/>
-
+    {registrated_user&&registrationMessage?<span className='session_success'>Usuario Registrado con exito</span>:<></>  }
+    {registration_error?<span className='session_error'> {registration_error}</span>:<></>  }
           <button type='submit' className='form_button'>Registrarme</button>
     </form>
     </div>

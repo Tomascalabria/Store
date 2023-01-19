@@ -8,6 +8,7 @@ import {AuthContext} from '../../Context/Auth/AuthContext'
 import {loginProcess} from '../../Context/Auth/ApiCall'
 export const Login = () => {
 const [email,setEmail]=useState('') 
+const [emailIsFocused,setEmailIsFocused]=useState(false)
 const [password,setPassword]=useState('') 
 const [emailValidation,setEmailValidation]=useState('')
 const navigate=useNavigate()
@@ -15,13 +16,12 @@ const navigate=useNavigate()
 const {user,error}=useContext(AuthContext) 
 const { dispatch } = useContext(AuthContext);
 
-
 const handleEmailChange=(e)=>{
 e.preventDefault()
 setEmail(e.target.value)
 
-if(!validateEmail(e.target.value) ){
-setEmailValidation('Invalid Email')
+if(emailIsFocused&&!validateEmail(e.target.value)){
+setEmailValidation('Ingresa un email valido')
 }
 else{
 setEmailValidation('')
@@ -31,14 +31,12 @@ setEmailValidation('')
 const handleLogin=async(e)=>{
   e.preventDefault()  
   loginProcess({email:email,password:password},dispatch)
-  console.log(user||error)
-  setTimeout(() => {
-    navigate('/')
-    
-  }, 1500);  
-  }
-  
-  return (
+}
+user?setTimeout(() => {
+  navigate('/')
+}, 2000):<></>
+
+return (
     
     <>
     <div className=' authContainer'>
@@ -52,13 +50,14 @@ const handleLogin=async(e)=>{
      
       <div className='login_email_container auth_email_container'>
       {/* <label className='login_form_email_label auth_email_label'>Email</label> */}
-      <input onInvalid={(e)=>{InvalidMsg(e.currentTarget)}} onChange={handleEmailChange} value={email} type='email' className='login_form_email_input auth_email_input' placeholder='EMAIL'></input>
-        <span style={{color:'red',fontSize:'.9rem'}}>{emailValidation}</span>
+      <input onInvalid={(e)=>{InvalidMsg(e.currentTarget)}} onFocus={()=>{setEmailIsFocused(true)}} onChange={handleEmailChange} value={email} type='email'required={true} className='login_form_email_input auth_email_input' placeholder='EMAIL'></input>
+        <span className='session_error' >{emailValidation}</span>
       </div>
       
       {/* <label className='login_form_password_label auth_password_label'>contraseña</label> */}
       <Password props={{password,setPassword}}/>
-
+  {error? <><span className='session_error'>{error}</span></>:<></>}
+  {user? <><span className='session_success'>Bienvenido {user.user_data.username}</span></>:<></>}
           <button type='submit' className='form_button'>Ingresar</button>
         <p className='auth_password_recovery'>Olvide mi contraseña</p>
     </form>

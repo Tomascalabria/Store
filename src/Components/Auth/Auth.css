@@ -27,6 +27,7 @@
 .auth_form{
     display: flex;
     height: 100%;
+    max-height: 80rem;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -66,6 +67,7 @@
 }
 .auth_password_input:focus{
 border: #fffffe solid 2px;
+
 }.auth_email_input:focus{
 border: #fffffe solid 2px;
 }
@@ -89,7 +91,7 @@ border: #fffffe solid 2px;
 }
 .auth_password_input{
     width: 70%;
-    height: 35%;
+    height: 45%;
     border-radius: 10px;
     color: #ffff;
     font-family: 'HKGroteskWide-Light';
@@ -193,6 +195,35 @@ border: #fffffe solid 2px;
     color: #ffff;
     font-family: 'HKGroteskWide-Light';
     font-weight: 500;
+}
+
+.password_alert_message{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: .95rem;
+    font-family: 'HKGroteskWide-Light';
+    font-weight: 500;
+    color: rgb(204, 46, 46);
+
+}
+.session_error{
+    color: rgb(204, 46, 46);
+    justify-content: center;
+    align-items: center;
+    font-weight: .95rem;
+    font-family: 'HKGroteskWide-Light';
+    font-weight: 500;
+    margin: .9rem 0;
+}
+.session_success{
+    color: rgb(34, 168, 22);
+    justify-content: center;
+    align-items: center;
+    font-weight: .95rem;
+    font-family: 'HKGroteskWide-Light';
+    font-weight: 500;
+    margin: 1rem 0;
 }
 
 /* .auth_email_label{

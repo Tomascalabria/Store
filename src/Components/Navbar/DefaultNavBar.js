@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import navBarLogo from '../../Media/Sneaker_illustration.png';
 import {CartIcon} from './CartIcon'
 import { Link } from 'react-router-dom';
 
 export const DefaultNavBar = () => {
-  return (
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [showMenuButton, setShowMenuButton] = useState(false);
+  // useEffect hook to detect screen width changes
+useEffect(() => {
+  const handleResize = () => setScreenWidth(window.innerWidth);
+  window.addEventListener("resize", handleResize);
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
+// useEffect hook to automatically show/hide menu button based on screen width
+useEffect(() => {
+  if (screenWidth < 700) {
+    setShowMenuButton(true);
+  } else {
+    setShowMenuButton(false);
+  }
+}, [screenWidth]);
+return (
+showMenuButton?<></>:
+
 <div className='NavBar_outer_container' style={{width:'100%',height:'100%',display:'flex',flexDirection:'column'}}>
       <div className='NavBar_top_container' style={{height:'100%',width:'100%',margin:'0rem 0.9rem',display:'flex',justifyContent:'center', alignItems:'center'}}>
         
