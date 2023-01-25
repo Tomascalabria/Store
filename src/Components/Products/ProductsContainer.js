@@ -36,8 +36,6 @@ let item=products.filter((product)=>{return product.product_category.toLowerCase
   return (
     <>
   <section className='products_container'>
-  <div className='products_container_separator'></div>
-
   {
 loader?
     <Loader/>:
@@ -47,25 +45,41 @@ loader?
 
 
     <>
+    <div className='no_products_container'>
+
     <h2 className='no_items_alert' >Estamos renovando los productos de esta categoria.</h2>
     <h2></h2>
+    </div>
     </>
 
   :
+<>
+       <div className='product_search'> 
+      <input className='product_search_bar' title='search' placeholder='Buscar: Air Max'></input>
 
-   products.map((product)=>{ 
+    </div>
+    <div className='product_filtering'>
+
+    </div>
+    <div className='products_container_separator'></div>
+
+   {products.map((product)=>{ 
      
      return(
        <>
 <ProductCard props={product} key={product.product_id}/> 
 </>
 )
-})
+})}</>
 }
+
 </div>
 </>
+
 }
 </section>
+<div className='products_container_separator'></div>
+<div className='products_container_separator'></div>
 
     </>
 

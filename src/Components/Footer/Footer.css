@@ -3,6 +3,7 @@
 .footer_section{
     width: 100%;
     height: 325px;
+    align-items: center;
 
 }
 .footer_container{
@@ -10,51 +11,63 @@
     flex-direction: row;
     width: 100%;
     height: 300px;
+    margin-top: 20px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .footer_inner_container_one{
 color: #ffff;
-width: 35%;
+width: 45%;
+display: flex;
+text-align: center;
+flex-direction: column;
+align-items: center;
 margin: 20px auto;
 }
 .main_footer_text{
     color: rgba(255, 255, 255, 0.925) ;
-    font-family: 'HKGroteskWide-Medium' ;
-    letter-spacing: 2px;
-    font-weight: 200    ;  
+    font-family: 'HKGroteskWide-lighter' ;
+    letter-spacing: 1.7px;
+    font-weight: 600    ;  
+    margin-bottom: 10px;
     text-align:normal;  
     margin-left: 1.9rem;
     font-size: 1.7rem;
 }
 .main_footer_text_p{
     font-family: 'HKGroteskWide-light' ;
-    width: 100%;
+    width: 780%;
     text-align: normal;
     font-weight: lighter   ;
     font-size: 0.82rem;
     color: #ffff;
 }
 .footer_inner_container_two{
-width: 60%;
+width: 100%;
+height: 70%;
 display: flex;
-justify-content: left;
+flex-wrap: wrap;
+justify-content: center;
 align-items: center;
-
-flex-direction: 2;
 }
 .footer_inner_container_two input{
-    width: 75%;
+    width: 45%;
     height: 55px;   
-    border: #fffffe solid 2px;
+    border: #fffffe solid 1.7px;
     color: #ffff;
+    border-radius: 20px;
     font-family: 'HKGroteskWide-Light';
     font-weight: 500;
+    align-items: center;
 }
 .footer_inner_container_two input:focus{
        background-color: rgba(41, 41, 41, 0.897);
-    
+
+}
+.footer_inner_container_two input::placeholder{
+    color: rgba(255, 255, 255, 0.477);
+    outline: transparent;
 }
 .footer_contact_button{
     color: #ffff;

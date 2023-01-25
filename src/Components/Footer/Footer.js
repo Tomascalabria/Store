@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className='footer_section'>
     <div className='footer_container'>
         <div className='footer_inner_container_one'>
-            <h2 className='main_footer_text'>Que no se corte!</h2>
+            <h2 className='main_footer_text'>Entra en nuestro mundo</h2>
             <p className='main_footer_text_p'>Dejanos tu mail para que te mandemos nuestras novedades, promociones, descuentos y mas</p>
 
         </div>

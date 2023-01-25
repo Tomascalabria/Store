@@ -6,8 +6,8 @@ import show_password_icon from  '../../Media/show_password_icon.png'
 export const PasswordRegister=({props})=>{
     const [firstPasswordType, setFirstPasswordType] = useState("password");
     const [secondPasswordType, setSecondPasswordType] = useState("password");
-    const [firstPasswordValidation, setFirstPasswordValidation] = useState("");
-    const [secondPasswordValidation, setSecondPasswordValidation] = useState("");
+    const [firstPasswordValidation, setFirstPasswordValidation] = useState(false);
+    const [secondPasswordValidation, setSecondPasswordValidation] = useState();
     const [passwordsValidationMessage,setPasswordsValidationMessage]=useState('')
 
     const handleFirstPasswordChange =(evnt)=>{
