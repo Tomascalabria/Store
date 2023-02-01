@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { json, useParams } from 'react-router-dom'
 import './Products.css'
 import { ProductCard } from './ProductCard'
 import { Loader } from './Loader'
+import { OosProductCard } from './OutOfStock/OosProductCard'
 
 export const  ProductsContainer = () => {
 const [products,setProducts]=useState([])
@@ -18,7 +19,6 @@ const response= await axios({
 })
 .then((response)=>{
     const data =response.data.data
-    console.log()
     setProducts(data)
     setLoader(false)
 })
@@ -31,7 +31,7 @@ useEffect(()=>{
     getProducts()
 },[category])
 
-let item=products.filter((product)=>{return product.product_category.toLowerCase()===category})
+let item=products.filter((product)=>{return product.category_name===category})
 
   return (
     <>
@@ -48,7 +48,6 @@ loader?
     <div className='no_products_container'>
 
     <h2 className='no_items_alert' >Estamos renovando los productos de esta categoria.</h2>
-    <h2></h2>
     </div>
     </>
 
@@ -63,13 +62,19 @@ loader?
     </div>
     <div className='products_container_separator'></div>
 
-   {products.map((product)=>{ 
-     
-     return(
-       <>
+   {item.map((product)=>{ 
+    if(product.stock===0){
+      return(
+      <OosProductCard props={product} key={product.product_id}/>
+      )}
+      else{
+
+        return(
+          <>
 <ProductCard props={product} key={product.product_id}/> 
 </>
 )
+}
 })}</>
 }
 

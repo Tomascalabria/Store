@@ -29,7 +29,7 @@ export const Categories = () => {
         </div></Link>
       </div>
    </section>
-   <section className='discounts'>
+   {/* <section className='discounts'>
     <div className='discounts_container'>
       <img className='discounts_container_img' src={discount_banner} alt='Winter season discount banner'></img>
       <div>
@@ -37,7 +37,7 @@ export const Categories = () => {
       </div>
 
     </div>
-   </section>
+   </section> */}
    </>
   )
 }
