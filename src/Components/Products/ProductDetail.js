@@ -1,18 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef, useContext } from 'react'
+import { CartContext } from '../../Context/CartContext';
 import { Desktop_SelectSize, SelectSize } from './Selectors/Size_selector/Desktop_SelectSize'
 
 export const ProductDetail = ({props}) => {
+  const ref = useRef(null);
+const {addToCart,cart,totalCost}=useContext(CartContext)
+const [selected_button,setSelectedButton]=useState('')
 const [SizeBar,setSizeBar]=useState(false)
-const [selectedSize, setSelectedSize] = useState('');
+const [selectedSize, setSelectedSize] = useState(false);
+const [warningMessage,setWarningMessage]=('')
 const handleSideBar=()=>{
 setTimeout(()=>{
   setSizeBar(true)
 },200)
 }
+
+const addItemToCart=()=>{
+if(!selectedSize){
+  setWarningMessage('Tenes que seleccionar un talle primero')
+}
+else{
+
+  let product={
+    ...props,size:selectedSize
+  }
+  
+  
+addToCart(product)
+}
+}
+totalCost()
+
 const handleSizeSelection=(e)=>{
-  e.preventDefault()
   let size=e.target.value
   setSelectedSize(size)
+
 }
 useEffect(()=>{
 
@@ -45,43 +67,39 @@ useEffect(()=>{
         </div>
 
         </div>
-      <div className='product_select'>
     
         <> 
 
         <div className='product_select_sizes'>
+       <div className='select_size_title_container'>
+        <h6>Seleccione su talle</h6>
 
+       </div>
         {Object.entries(props.stock).map((size)=>{
           if(size[1]===0){
             return(
-              <span key={size[0]} className="price--line-through"><button  key={size[0]} className={`size_${size[0]}_button size_no_stock`} title='Perdon pero no tenemos stock de este producto:'>{size[0]}</button></span>
+              <span key={size[0]} className="price--line-through"><button  key={size[0]} className={ `size_${size[0]}_button size_no_stock` } title='Perdon pero no tenemos stock de este producto:'>{size[0]}</button></span>
                 )
           }
           else{
             return(
-              <button key={size[0]} className={`size_${size[0]}_button size_button`} onClick={(e)=>handleSizeSelection(e)} value={size[0]}>{size[0]} </button>
+              <button key={size[0]} ref={ref} className={`size_${size[0]}_button size_button`} onClick={(e)=>handleSizeSelection(e)} value={size[0]}>{size[0]} </button>
 
             )
           }
       })}
 
           </div>
-          
-          <div className='product_select_quantity'>
-            
-              <h4 className='product_select_quantity_label'>Cantidad</h4>   
-                     
-        </div>
+         
 
         </>
 
-        </div>
         
         <div className='buy_product_btn_container'>
 
-       <button className='buy_product_btn'>Comprar</button>
+       <button className='buy_product_btn' onClick={addItemToCart}>Comprar</button>
         </div>
-        
+        <p style={{color:'red',fontSize:'1.4rem'}}>{warningMessage}</p>
       </div>
 
       </div>

@@ -1,29 +1,32 @@
-
-
 .footer_section{
     width: 100%;
-    height: 325px;
+    height: auto;
     align-items: center;
-
 }
 .footer_container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    height: 300px;
+    height: auto;
     margin-top: 20px;
     align-items: center;
+}
+@media (min-width: 768px) {
+  .footer_container {
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
 }
 .footer_inner_container_one{
-color: #ffff;
-width: 45%;
-display: flex;
-text-align: center;
-flex-direction: column;
-align-items: center;
-margin: 20px auto;
+    color: #ffff;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
 }
 .main_footer_text{
     color: rgba(255, 255, 255, 0.925) ;
@@ -37,22 +40,23 @@ margin: 20px auto;
 }
 .main_footer_text_p{
     font-family: 'HKGroteskWide-light' ;
-    width: 780%;
+    width: 100%;
     text-align: normal;
     font-weight: lighter   ;
     font-size: 0.82rem;
     color: #ffff;
 }
 .footer_inner_container_two{
-width: 100%;
-height: 70%;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .footer_inner_container_two input{
-    width: 45%;
+    width: 100%;
+    max-width: 45%;
     height: 55px;   
     border: #fffffe solid 1.7px;
     color: #ffff;
@@ -63,7 +67,6 @@ align-items: center;
 }
 .footer_inner_container_two input:focus{
        background-color: rgba(41, 41, 41, 0.897);
-
 }
 .footer_inner_container_two input::placeholder{
     color: rgba(255, 255, 255, 0.477);
@@ -84,4 +87,21 @@ align-items: center;
 .footer_contact_button:hover{
     font-weight: bold;
     border: solid 1px white;
+}
+@media (min-width: 769px ) {
+    .footer_section {
+        width: 100%;
+        display: flex;
+        height: 395px;
+        align-items: center;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .footer_container {
+        height: 539px;
+        align-items: center;
+    }
 }

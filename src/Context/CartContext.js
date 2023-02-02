@@ -7,31 +7,35 @@ const init = JSON.parse(sessionStorage.getItem('carrito'))||[]
 export const CartContextProvider =({children})=>{
 
 
-    const [carrito, setCarrito]=useState(init)
-
+    const [cart, setCart]=useState(init)
+/**
+addToCart - a function that adds an item to the cart.
+@param {Object} item - The item to be added to the cart.
+@returns {Array} - Returns an updated cart with the added item.
+*/
     const addToCart = (item) => {
     
-      setCarrito( [...carrito, item] )
+      setCart( [...cart, item] )
     
     }
     const clearCart = () => {
-      setCarrito([])
+      setCart([])
     }
     
     const calculateCartItems = () => {
-      return carrito.reduce( (acc, prod) => acc + 1, 0 )
+      return cart.reduce( (acc, prod) => acc + 1, 0 )
     }
       const removeItem  = (itemId) => {
-        const newCart = carrito.filter( (prod) => prod.id !== itemId)
-        setCarrito( newCart )
+        const newCart = cart.filter( (prod) => prod.id !== itemId)
+        setCart( newCart )
       }
       const totalCost = () => {
-        return carrito.reduce( (acc, prod) => acc + prod.cantidad * prod.precio, 0)
+       return cart.reduce( (acc, prod) => acc + 1 * prod.product_price, 0)
       }
     
       useEffect(()=>{
-        sessionStorage.setItem('carrito', JSON.stringify(carrito))
-      }, [carrito])
+        sessionStorage.setItem('carrito', JSON.stringify(cart))
+      }, [cart])
     
       
        
@@ -40,7 +44,7 @@ export const CartContextProvider =({children})=>{
         addToCart,
         calculateCartItems,
         removeItem,
-        carrito,
+        cart,
         totalCost,
         clearCart
     }}>
