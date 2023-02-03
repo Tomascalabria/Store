@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Context/Auth/AuthContext';
-import { DefaultNavBar } from './DefaultNavBar';
+import { DefaultNavBar } from './default/DefaultNavBar';
 import './NavBar.css'
-import { SessionNavBar } from './SessionNavBar';
+import { SessionNavBar } from './session/SessionNavBar';
 export const NavBar = () => {
 const {user}=useContext(AuthContext)
 

@@ -97,3 +97,94 @@ a {
       height: 60%;
       object-fit: contain;
 }
+
+/* Hamburguer Menu */
+.menu__lineas {
+  position: fixed;
+  right: 10px;
+  width: 30px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  cursor: pointer; 
+}
+
+.menu__lineas__linea1, .menu__lineas__linea2, .menu__lineas__linea3 {
+  width: 30px;
+  height: 3px;
+  background-color: rgb(250, 250, 250);
+  transition: transform 0.5s; 
+}
+
+.menu__lineas__linea2 {
+  margin: 5px 0; 
+}
+
+.menu__lineas__linea1B {
+  transform: rotate(45deg) translate(4px, 6px); 
+}
+
+.menu__lineas__linea2B {
+  opacity: 0; 
+}
+
+.menu__lineas__linea3B {
+  transform: rotate(-45deg) translate(6px, -7px); 
+}   
+
+/*MENU ITEMS*/
+.menu__items {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: fixed;
+  background-color: rgb(2, 39, 2);
+  z-index: 99;
+}
+
+.menu__items ul {
+  background-color: rgb(2, 39, 2);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 190;
+  padding: 0;
+  padding-bottom: 50px;
+}
+
+.menu__items ul li {
+  width: 100%;
+  height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  list-style: none;
+}
+
+.menu__items ul li a {
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  z-index: 201; 
+}
+
+.menu__items ul li a:hover {
+  color: violet;
+}
+
+.menu__items ul li:nth-child(1) {
+  padding-top: 50px; 
+}

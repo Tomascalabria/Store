@@ -15,6 +15,14 @@ setTimeout(()=>{
 },200)
 }
 
+const loop=()=>{
+if(props.stock[selectedSize]<13){
+  console.log('Ojo eh, el stock de este producto es : '+props.stock[selectedSize])
+}
+  
+}
+loop()
+
 const addItemToCart=()=>{
 if(!selectedSize){
   setWarningMessage('Tenes que seleccionar un talle primero')

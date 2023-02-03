@@ -3,6 +3,9 @@
     width: 100%;
     height:500px;
 }
+.categories a{
+  gap: 10px;
+}
 .categories_container{
     display: flex;
     justify-content: space-around;

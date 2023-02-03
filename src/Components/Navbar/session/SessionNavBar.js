@@ -1,31 +1,19 @@
-import React, { useEffect,useState } from 'react'
-import navBarLogo from '../../Media/Sneaker_illustration.png';
-import {CartIcon} from './CartIcon'
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react'
+import navBarLogo from '../../../Media/Sneaker_illustration.png';
+import {CartIcon} from '../CartIcon'
+import { Link, useNavigate } from 'react-router-dom';
+import { logoutProcess } from '../../../Context/Auth/ApiCall';
+import { AuthContext } from '../../../Context/Auth/AuthContext';
 
-export const DefaultNavBar = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [showMenuButton, setShowMenuButton] = useState(false);
-  // useEffect hook to detect screen width changes
-useEffect(() => {
-  const handleResize = () => setScreenWidth(window.innerWidth);
-  window.addEventListener("resize", handleResize);
-  return () => {
-    window.removeEventListener("resize", handleResize);
-  };
-}, []);
-
-// useEffect hook to automatically show/hide menu button based on screen width
-useEffect(() => {
-  if (screenWidth < 700) {
-    setShowMenuButton(true);
-  } else {
-    setShowMenuButton(false);
-  }
-}, [screenWidth]);
-return (
-showMenuButton?<></>:
-
+export const SessionNavBar = () => {
+const { user } = useContext(AuthContext)
+const navigate=useNavigate()
+const { dispatch }= useContext(AuthContext)
+    const handleLogout=()=>{
+        logoutProcess(dispatch)
+    
+    }
+  return (
 <div className='NavBar_outer_container' style={{width:'100%',height:'100%',display:'flex',flexDirection:'column'}}>
       <div className='NavBar_top_container' style={{height:'100%',width:'100%',margin:'0rem 0.9rem',display:'flex',justifyContent:'center', alignItems:'center'}}>
         
@@ -40,9 +28,9 @@ showMenuButton?<></>:
           </div>
           <div className='NavBar_top_auth_section' style={{width:'30.5%',justifyContent:'flex-end',display:'flex', flexDirection:'row',alignContent:'center'}}>
             <div className='NavBar_top_auth_container' style={{ gap:'1rem',marginRight:'1.3em'}}> 
-            <Link to={'/Login'}><button className='authButton' >INGRESAR</button></Link>
-            <Link to={'/Register'}><button  className='authButton'> REGISTRARME</button></Link>
-            <CartIcon/>
+            <Link to={'/'}><button className='authButton' onClick={handleLogout}>Logout</button></Link>
+            <button  className='authButton' > profile</button>
+            <CartIcon/> 
               </div>
             
           </div>
@@ -50,6 +38,6 @@ showMenuButton?<></>:
 
           </div>
         </div>
-
-    </div>  )
+    </div>
+    )
 }
