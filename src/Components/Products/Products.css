@@ -6,9 +6,7 @@
 a{
   background-color: transparent;
 }
-.no_items_alert{
-color: white;
-}
+
 .product_search{
   width: 100%;
   height: 100px;
@@ -60,16 +58,16 @@ color: white;
   width: 100%;
 }
 .product_card{
-  width: 290px;
+  width: 300px;
   height: 350px;
   color: white;
   margin: 30px;
   cursor: pointer;
 }
 .product_card img{
-  width: 315px;
   object-fit: contain;
   height: 300px;
+  width: 100%;
 }
 .product_card_hover_text{
 display: flex;
@@ -90,10 +88,9 @@ align-items: center;
 .product_title{
 font-family: 'HKGroteskWide-Light';
 font-weight: lighter;
-font-size: .95rem;
-letter-spacing: 0.8px;    
+font-size: .95rem;;
+letter-spacing: 0.7px;    
 cursor: pointer;
-position: relative;
 }
 .product_title a{
   background-color: transparent;
@@ -154,18 +151,14 @@ background-color: transparent;
 }
 
 
-.img_miniature_1{
-width: 10px;
-height: 10px;
+.img_miniature_1,.img_miniature_2{
+width: 40px;
+height: 40px;
+
 border-radius: 100%;
 object-fit: contain;
 }
-.img_miniature_2{
-border-radius: 100%;
-width: 10px;
-height: 10px;
-object-fit: contain;
-}
+
 .see_more_button{
 width: 42px;
 height: 42px;
@@ -444,16 +437,21 @@ color: gray;
   color: red;
   margin-left: 6px;
 }
-.Detail_Out_of_stock{
+.detail_Out_of_stock{
   width: 100%;
+  font-family:'HKGroteskWide-Light' ;
+  font-weight: 400    ;
   height: 60px;
   color: rgb(207, 57, 57);
   align-items: center;
   justify-content: center;
   display: flex;
-  font-weight: 400;
-  font-family: 'HKGroteskWide-ligther';
 
+}
+.no_items_alert{
+  font-weight: 550;
+  font-family: 'HKGroteskWide-ligther';
+  color: #fff;
 }
 .buy_product_btn_container{
   width: 100%;

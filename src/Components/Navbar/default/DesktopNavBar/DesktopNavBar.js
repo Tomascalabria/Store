@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import navBarLogo from '../../../../Media/Sneaker_illustration.png';
-import {CartIcon} from '../../CartIcon'
+import { Cart } from "../../../Cart/Cart";
 
 
   export const DesktopNavBar=()=>{
@@ -22,7 +22,7 @@ import {CartIcon} from '../../CartIcon'
               <div className='NavBar_top_auth_container' style={{ gap:'1rem',marginRight:'1.3em'}}> 
               <Link to={'/Login'}><button className='authButton' >INGRESAR</button></Link>
               <Link to={'/Register'}><button  className='authButton'> REGISTRARME</button></Link>
-              <CartIcon/>
+              <Cart/>
                 </div>
               
             </div>

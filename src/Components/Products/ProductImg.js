@@ -14,7 +14,7 @@ return (
 <div className='img_miniature'>
     {props.product_img&&props.product_img_two?
     <>
-        <img className='img_miniature_1' src={props.product_img} />
+        <img className='img_miniature_1 ' src={props.product_img} />
     <img className='img_miniature_2' src={props.product_img_two} onMouseEnter={()=>setImage_1(false)}   />
     </>
     :<>

@@ -1,27 +1,11 @@
 import React, { useEffect, useState,useRef, useContext } from 'react'
 import { CartContext } from '../../Context/CartContext';
-import { Desktop_SelectSize, SelectSize } from './Selectors/Size_selector/Desktop_SelectSize'
-
 export const ProductDetail = ({props}) => {
   const ref = useRef(null);
-const {addToCart,cart,totalCost}=useContext(CartContext)
-const [selected_button,setSelectedButton]=useState('')
-const [SizeBar,setSizeBar]=useState(false)
+const {addToCart,totalCost}=useContext(CartContext)
 const [selectedSize, setSelectedSize] = useState(false);
 const [warningMessage,setWarningMessage]=('')
-const handleSideBar=()=>{
-setTimeout(()=>{
-  setSizeBar(true)
-},200)
-}
 
-const loop=()=>{
-if(props.stock[selectedSize]<13){
-  console.log('Ojo eh, el stock de este producto es : '+props.stock[selectedSize])
-}
-  
-}
-loop()
 
 const addItemToCart=()=>{
 if(!selectedSize){
@@ -30,11 +14,10 @@ if(!selectedSize){
 else{
 
   let product={
-    ...props,size:selectedSize
+    ...props,size:selectedSize,quantity:1
   }
   
-  
-addToCart(product)
+  addToCart(product)
 }
 }
 totalCost()
@@ -44,9 +27,9 @@ const handleSizeSelection=(e)=>{
   setSelectedSize(size)
 
 }
+
 useEffect(()=>{
 
-  console.log(selectedSize)
 },[selectedSize])
 
   return (

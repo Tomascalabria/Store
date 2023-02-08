@@ -143,12 +143,10 @@ border: #fffffe solid 2px;
     font-size: 12.5px;
     background-color: transparent;
     color: #ffff;
-  position: relative;
+
   cursor: pointer
 }
 .auth_password_recovery:after {
-    
-    content: '';
     position: absolute;
     width: 85%;
     transform: scaleX(0);

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import navBarLogo from '../../../Media/Sneaker_illustration.png';
-import {CartIcon} from '../CartIcon'
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutProcess } from '../../../Context/Auth/ApiCall';
 import { AuthContext } from '../../../Context/Auth/AuthContext';
+import { Cart } from '../../Cart/Cart';
 
 export const SessionNavBar = () => {
 const { user } = useContext(AuthContext)
@@ -30,7 +30,7 @@ const { dispatch }= useContext(AuthContext)
             <div className='NavBar_top_auth_container' style={{ gap:'1rem',marginRight:'1.3em'}}> 
             <Link to={'/'}><button className='authButton' onClick={handleLogout}>Logout</button></Link>
             <button  className='authButton' > profile</button>
-            <CartIcon/> 
+            <Cart/> 
               </div>
             
           </div>

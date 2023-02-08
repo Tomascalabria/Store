@@ -57,8 +57,8 @@ const {addToCart}=useContext(CartContext)
         </div>
 
         </div>
-      <div className='Detail_Out_of_stock'>
-      <h4>Lo sentimos este producto está agostado</h4>
+      <div className='detail_Out_of_stock'>
+      <h4 className='detail_Out_of_stock_title'>Lo sentimos este producto está agostado</h4>
         <> 
         
     
