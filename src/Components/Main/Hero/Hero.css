@@ -66,7 +66,6 @@
 }
 .banner_text{
     display: flex;
-    position: relative;
     align-items:center;
     justify-content: center;
     border-radius: 10px;

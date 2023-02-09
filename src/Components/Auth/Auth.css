@@ -53,7 +53,8 @@
     margin-right: 32px;
     height: 35%;
     align-self: center;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: solid 1px #fff ;
     color: #ffff;
     background-color: #0000;
     font-family: 'HKGroteskWide-Light';
@@ -91,8 +92,9 @@ border: #fffffe solid 2px;
 }
 .auth_password_input{
     width: 70%;
-    height: 45%;
-    border-radius: 10px;
+    height: 35%;
+    border-radius: 5px;
+    border: solid 1px #fff  ;
     color: #ffff;
     font-family: 'HKGroteskWide-Light';
     font-weight: 500;
@@ -189,7 +191,8 @@ border: #fffffe solid 2px;
 .register_form_password_input{
     width: 70%;
     height: 35%;
-    border-radius: 10px;
+    border-radius:5px;
+    border: solid 1px #fff  ;
     color: #ffff;
     font-family: 'HKGroteskWide-Light';
     font-weight: 500;

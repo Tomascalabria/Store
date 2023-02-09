@@ -1,15 +1,15 @@
-import React from 'react'
-import { Footer } from './Components/Footer/Footer';
+import React, { useEffect } from 'react'
 import './App.css'
-import {NavBar} from './Components/Navbar/NavBar'
 import { Routing } from './Components/Routing/Routing';
+import { CheckOut } from './Components/CheckOut/CheckOut';
+import { useLocation } from 'react-router-dom';
 const  App=()=> {
+
   return (
     <div className="App">
-      <NavBar/>
+    
+    <Routing/>
 
-      <Routing/>
-      <Footer/> 
     </div>
   );
 }

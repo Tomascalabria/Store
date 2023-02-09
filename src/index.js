@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { CartContextProvider } from './Context/CartContext';
+import { CartContextProvider } from './Context/Cart/CartContext';
 import { AuthContextProvider } from './Context/Auth/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,48 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from '../../Context/Cart/CartContext'
 import { CartIcon } from "./CartIcon";
 import closeIcon from "../../Media/CloseIcon.png";
 import { Link } from "react-router-dom";
 
 export const Cart = () => {
-const { cart, totalCost,addOne,takeOne} = useContext(CartContext);
-const [style, setStyle] = useState("menu");
-const [menuStatus, setMenuStatus] = useState("open");
+const { cart, totalCost,addOne,takeOne,handleClick,style} = useContext(CartContext);
 const ref = useRef(null);
 
-const handleClick = () => {
-switch (menuStatus) {
-case "open":
-setMenuStatus("close");
-setStyle("menu active");
-break;
-case "close":
-setMenuStatus("open");
-setStyle("menu");
-break;
-default:
-  setMenuStatus("open");
-setStyle("menu");
-}}
 
 
-useEffect(() => {
-  const handleKeyDown = (event) => {
-    if (event.key === 'Escape') {
-      setMenuStatus('close');
-      setStyle('menu');
-    }
-  }
-  document.addEventListener('keydown', handleKeyDown);
-  return () => {
-    document.removeEventListener('keydown', handleKeyDown);
-  };
-}, [menuStatus]);
 
 return (
 <>
-<CartIcon props={{ handleClick }} />
+<CartIcon props={{ handleClick }}  />
 
 <div ref={ref} className={style}>
   {cart.length===0?
@@ -75,7 +47,7 @@ return (
         {cart.map((items) => {
           return (
             <>
-              <div className="cart_items">
+              <div className="cart_items" key={items.product_id}>
                 <img
                 alt={items.product_name}
                   className="cart_product_img"

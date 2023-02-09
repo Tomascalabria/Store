@@ -1,0 +1,123 @@
+.checkout_container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.checkOutDetail{
+    width: 25%;
+    height: 100%;
+}
+.detail_title{
+    color: #fffeff;
+    font-weight: lighter;
+    font-size: 15px;
+    text-align: center;
+    font-family:'HKGroteskWide-light' ;
+
+}
+
+.checkOutForm{
+    width: 75%;
+    height: 100%;
+}
+.form_container{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.checkOut_method{
+
+    margin-top: 10px;
+    width: 75%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.checkOut_method_ship{
+    width:20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.checkOut_method_pick{
+    width: 20%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+}
+.method_button{
+    width: 180px;
+    height: 90%;
+    letter-spacing: .9px;
+    margin:0 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    font-family:'HKGroteskWide-light' ;
+    border: solid 1px #fff;
+}
+.method_button:hover{
+    background-color: #ffffffce;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+.method_button:focus{
+    background-color: #ffffffce;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+.checkout_title{
+font-size: 19px;
+
+color: #fffeff;
+letter-spacing: .9px;
+font-family:'HKGroteskWide-light' ;
+font-weight: lighter;
+}
+
+
+.checkout_input{
+    width: 180px;
+    height: 20px;
+    margin: 0 20px;
+    align-self: center;
+    border-radius: 5px;
+    color: #ffff;
+    background-color: #0000;
+    font-family: 'HKGroteskWide-Light';
+    font-weight: 500;
+    border: solid 1px #fff  ;
+    padding-left: 4px;
+
+}
+input::placeholder{
+    font-family: 'HKGroteskWide-Light';
+    font-weight: 500; 
+    padding-left: 4px;
+    display: flex;
+}
+
+.checkout_label{
+    color: #fffeff;
+    font-family: 'HKGroteskWide-Light';
+    font-weight: lighter;
+
+}
+.checkout_label_container{
+    width: 300px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+    align-items: center;    
+}

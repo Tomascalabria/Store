@@ -3,10 +3,10 @@
 .menu {
   height: 100vh;
   width: 390px;
-  position:fixed;
+  position:fixed ;
   right:0%;
   top: 0%;
-
+  
   overflow-y: scroll;
   visibility: hidden;
   transition: all 0.25s ease;
@@ -57,6 +57,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .close_cart_container{
   width: 100%;
@@ -78,6 +79,7 @@
   font-weight: 400    ;
   margin-bottom: 40px;
   font-size: 15.5px;
+  position: relative;
 text-align: center;
 }
 .cart_button{
@@ -94,6 +96,7 @@ text-align: center;
   flex-wrap: nowrap;
   align-content: stretch;
   justify-content: space-between;
+  position: relative;
 }
 .cart_product_price{
   font-family:'HKGroteskWide-Light' ;
@@ -106,6 +109,7 @@ text-align: center;
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .product_size{
   display: inline-flex;
@@ -124,6 +128,7 @@ text-align: center;
   font-weight: 100    ;
   color: #fff;  
   font-size: 9.9px;
+  position: relative;
 }
 .checkOut_btn{
   width: 100%;
@@ -156,6 +161,7 @@ text-align: center;
   font-weight: 100    ;
   margin-top: 20px;
   margin-left: 0px;
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;

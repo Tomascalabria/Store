@@ -9,9 +9,11 @@ export const SessionNavBar = () => {
 const { user } = useContext(AuthContext)
 const navigate=useNavigate()
 const { dispatch }= useContext(AuthContext)
+
+
     const handleLogout=()=>{
         logoutProcess(dispatch)
-    
+        navigate('/')
     }
   return (
 <div className='NavBar_outer_container' style={{width:'100%',height:'100%',display:'flex',flexDirection:'column'}}>

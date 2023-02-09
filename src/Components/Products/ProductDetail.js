@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useRef, useContext } from 'react'
-import { CartContext } from '../../Context/CartContext';
+import { CartContext } from '../../Context/Cart/CartContext';
 export const ProductDetail = ({props}) => {
   const ref = useRef(null);
 const {addToCart,totalCost}=useContext(CartContext)
