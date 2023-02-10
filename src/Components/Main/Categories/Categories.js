@@ -3,7 +3,6 @@ import './Categories.css'
 import shoes_categories_portrait from '../../../Media/Shoe_categories_portrait.webp'
 import clothes_categories_portrait from '../../../Media/Clothes_categories_portrait.avif'
 import accesories_categories_portrait from '../../../Media/Accesories_categories_portrait.webp'
-import discount_banner from '../../../Media/winter_sale_discount_banner.jpg'
 import { Link } from 'react-router-dom'
 const scrollToTop = () => {
   window.scrollTo(0, 0)
@@ -29,15 +28,7 @@ export const Categories = () => {
         </div></Link>
       </div>
    </section>
-   {/* <section className='discounts'>
-    <div className='discounts_container'>
-      <img className='discounts_container_img' src={discount_banner} alt='Winter season discount banner'></img>
-      <div>
-       <h2 className='discount_epigraph'>No te pierdas la oportunidad</h2> 
-      </div>
-
-    </div>
-   </section> */}
+  
    </>
   )
 }

@@ -71,7 +71,6 @@ const handleEmailChange=(e)=>{
       <h2 className='auth_form_title login_form_title'>Registro</h2>
      
       <div className='login_email_container auth_email_container'>
-      {/* <label className='login_form_email_label auth_email_label'>Email</label> */}
       <input onInvalid={(e)=>InvalidMsg(e.currentTarget)} type='email' onChange={handleEmailChange} className='login_form_email_input auth_email_input' required='true' value={email} placeholder='MAIL'></input>
       </div>
 
@@ -80,7 +79,6 @@ const handleEmailChange=(e)=>{
       <input type='username' onChange={handleUsername} className='login_form_email_input auth_email_input' required='true' value={username} placeholder='USUARIO'></input>
       </div>
       
-      {/* <label className='login_form_password_label auth_password_label'>contraseña</label> */}
       <PasswordRegister  props={{password_1,password_2,setPassword_2,setPassword_1,passwordsValidation,setPasswordsValidation}}/>
     {registrated_user&&registrationMessage?<span className='session_success'>Usuario Registrado con exito</span>:<></>  }
     {registration_error?<span className='session_error'> {registration_error}</span>:<></>  }

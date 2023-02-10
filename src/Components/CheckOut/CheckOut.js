@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { CheckOutDetail } from './CheckoutDetail/CheckOutDetail'
 import { ShipmentForm } from './ShipmentForm'
 

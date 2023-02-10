@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import axios from 'axios'
 import '../Products.css'
 import { Loader } from '../Loader'
 import { useParams } from 'react-router-dom'
-import { CartContext } from '../../../Context/Cart/CartContext'
 
 export const OosProductDetail = () => {
-const categories=['vestimenta','accesorios','otros']
 const [product,setProduct]=useState({})
 const [loader,setLoader]=useState([false])
 const {id}=useParams()
@@ -17,12 +15,10 @@ const {id}=useParams()
   })
   .then((response)=>{
     const data =response.data.data
-  console.log(data)
     setProduct(data[0])
     setLoader(false)
 })
 .catch((err)=>{
-    console.log(err)
 })
   }
 

@@ -1,8 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import black_arrow from '../../../Media/black_arrow.png'
 import gold_arrow from '../../../Media/gold_arrow.png'
-import white_arrow from '../../../Media/white_arrow.png'
 import banner from '../../../Media/banner_3.jpg'
 
 

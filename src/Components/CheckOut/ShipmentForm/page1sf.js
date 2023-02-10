@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { validateEmail } from '../../../handlers/handlers'
-import deliverIcon from '../../../Media/deliver.png'
 import '../CheckOut.css'
 export const Page1Sf = () => {
 const [method,setMethod]=useState('')
