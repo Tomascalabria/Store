@@ -3,11 +3,14 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
+    margin: 0 ;
+    padding:0;
 }
 
 .checkOutDetail{
     width: 25%;
     height: 100%;
+    border: solid 1px #fffeff;
 }
 .detail_title{
     color: #fffeff;
