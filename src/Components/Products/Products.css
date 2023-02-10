@@ -22,7 +22,7 @@ a{
   font-family: 'HKGroteskWide-Light';
   margin-top: 0;
   padding: 4px;
-  font-size: .9rem;
+  font-size: .99rem;
   border: solid 1.38px #ffff;
   border-right: transparent;
   border-left: transparent;
@@ -91,6 +91,7 @@ font-weight: lighter;
 font-size: .95rem;;
 letter-spacing: 0.7px;    
 cursor: pointer;
+position: relative;;
 }
 .product_title a{
   background-color: transparent;
@@ -119,7 +120,7 @@ transform-origin: bottom left;
 }
 
 .product_price{
-  font-size: .85rem;
+  font-size: 1rem;
   color: #ffff;
   letter-spacing: 0.8px;
   width: 60px;
@@ -257,7 +258,7 @@ align-content: center;
 }
 .select_size_title_container{
   width: 100%;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: 'HKGroteskWide-ligther';
   font-weight: lighter;
   letter-spacing: 1.9px;
@@ -271,7 +272,7 @@ align-content: center;
   color: #ffff;
   font-family: 'HKGroteskWide-ligther';
   letter-spacing: .8px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   
 
 }
@@ -347,7 +348,7 @@ cursor: pointer;
   align-items: center;
 }
 .product_detail_price_container {
-  width: 95%;
+  width: 90%;
   display: flex;
   font-family: 'HKGroteskWide-ligther';
   flex-direction: row;
@@ -360,14 +361,14 @@ h4.product_detail_price_label {
   font-weight: 500;
   background-color: transparent;
   font-family: 'HKGroteskWide-ligther';
-  width: 64px;
+  width: 70px;
   text-align: right;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 h4.product_select_sizes_label{
   color:#ffff;
   background-color: transparent;
-  font-size: '0.85rem';
+  font-size: .9rem;
 
   border-radius: 25px;
   border-color: transparent;
@@ -398,7 +399,7 @@ h4.product_select_sizes_label:hover:after {
 h4.product_select_quantity_label{
   color:#ffff;
   background-color: transparent;
-  font-size: '0.85rem';
+  font-size:0.95rem;
 
   border-radius: 25px;
   border-color: transparent;
@@ -430,7 +431,7 @@ h4.product_select_quantity_label:hover:after {
 /* OUT OF STOCK VIEW */
 .Card_Out_of_stock{
 width: 100%;
-font-size: .85;
+font-size: .95;
 color: gray;
 }
 .card_out_of_stock_price{
@@ -462,7 +463,7 @@ color: gray;
 
 }
 .buy_product_btn{
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: white;
   min-width :55%;
   border-radius: 25px;

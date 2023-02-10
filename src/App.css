@@ -31,17 +31,23 @@
 
     font-family: 'HKGroteskWide-Black' ;
     src: url('./fonts/TTF/HKGroteskWide-Black.ttf') format('truetype');
+    font-display: fallback;
+
 
 }
 @font-face {
 
     font-family: 'HKGroteskWide-Light' ;
-    src: url('./fonts/TTF/HKGroteskWide-Light.ttf') format('truetype');
+    src: url('./fonts/TTF/HKGroteskWide-Light.ttf') format('ttf');
+    font-display: fallback;
+
 
 }
 @font-face {
 
     font-family: 'HKGroteskWide-Medium' ;
-    src: url('./fonts/TTF/HKGroteskWide-Medium.ttf') format('truetype');
+    src: url('./fonts/TTF/HKGroteskWide-Medium.ttf') format('ttf');
+    font-display: fallback;
+
 
 }

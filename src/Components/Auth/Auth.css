@@ -38,7 +38,7 @@
     font-family: 'HKGroteskWide-Medium';
     font-weight: lighter;
     letter-spacing: 4px;
-    font-size: 1.9rem;
+    font-size: 2rem;
 }
 .auth_email_container{
     display: flex;
@@ -103,7 +103,7 @@ border: #fffffe solid 2px;
     color: #ffff;
     font-family: 'HKGroteskWide-Medium';
     font-weight: lighter;
-    font-size: 1.15rem;
+    font-size: 1.45rem;
     width: 45%;
     height: 45px;
     border-radius: 20px;
@@ -142,7 +142,7 @@ border: #fffffe solid 2px;
 .auth_password_recovery{
     font-family:'HKGroteskWide-Light' ;
     font-weight: 100    ;
-    font-size: 12.5px;
+    font-size: 14.5px;
     background-color: transparent;
     color: #ffff;
 

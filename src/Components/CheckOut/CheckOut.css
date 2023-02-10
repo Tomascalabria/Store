@@ -15,7 +15,7 @@
 .detail_title{
     color: #fffeff;
     font-weight: lighter;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     font-family:'HKGroteskWide-light' ;
 
@@ -80,7 +80,7 @@
     cursor: pointer;
 }
 .checkout_title{
-font-size: 19px;
+font-size: 20px;
 
 color: #fffeff;
 letter-spacing: .9px;
