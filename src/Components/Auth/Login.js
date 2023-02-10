@@ -16,6 +16,32 @@ const navigate=useNavigate()
 const {user,error}=useContext(AuthContext) 
 const { dispatch } = useContext(AuthContext);
 
+
+function preloadImages(urls, allImagesLoadedCallback){
+  var loadedCounter = 0;
+var toBeLoadedNumber = urls.length;
+urls.forEach(function(url){
+  preloadImage(url, function(){
+      loadedCounter++;
+          console.log('Number of loaded images: ' + loadedCounter);
+    if(loadedCounter == toBeLoadedNumber){
+      allImagesLoadedCallback();
+    }
+  });
+});
+function preloadImage(url, anImageLoadedCallback){
+    var img = new Image();
+    img.onload = anImageLoadedCallback;
+    img.src = url;
+}
+}
+
+preloadImages([
+login_banner
+
+], function(){
+});
+
 const handleEmailChange=(e)=>{
 e.preventDefault()
 setEmail(e.target.value)
