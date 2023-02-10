@@ -69,14 +69,14 @@ export const PasswordRegister=({props})=>{
                 <div className="first_password_container">
                     <input  type={firstPasswordType} required='true' onChange={handleFirstPasswordChange} value={props.password_1} name="password" className="register_form_password_input auth_password_input" placeholder="CONTRASEÑA" />
                      <button className="show_password_btn" onClick={toggleFirstPassword}>   
-                     { firstPasswordType==="password"? <img className="show_password_icon" alt="show password logo.png"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
+                     { firstPasswordType==="password"? <img className="show_password_icon" alt="show password logo.png - Hace click y conoce tu contrasñea"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
                      </button>
                 </div>
                     <div className="second_password_container">
         
                      <input type={secondPasswordType} required='true' onChange={handleSecondPasswordChange} value={props.password_2} name="second_password" className="register_form_password_input auth_password_input" placeholder="REINGRESA LA CONTRASEÑA" />
                      <button className="show_password_btn" onClick={toggleSecondPassword}>
-                     { secondPasswordType==="password"? <img className="show_password_icon" alt="show password logo.png"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
+                     { secondPasswordType==="password"? <img className="show_password_icon" alt="show password logo.png - Hace click y conoce tu contrasñea"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
                      </button>
 
                     </div>

@@ -20,7 +20,7 @@ return (
   {cart.length===0?
   <>
   <div className="close_cart_container">
-  <img alt="close the cart"
+  <img alt="Cerrar el carrito de compras. Hace click y cerrá el carrito."
     className="close_cart"
     src={closeIcon}
     onClick={handleClick}

@@ -41,7 +41,7 @@ return (
     <>
     <div className=' authContainer'>
   <div className='login_banner auth_banner' >
-    <img className='auth_banner_img' src={login_banner} alt='login banner '/>
+    <img className='auth_banner_img' src={login_banner} alt='login banner de La Tiendita. Ingresa en nuestra pagina para conocer mas sobre nosotros '/>
    </div>
     
     <div className='login_form_container auth_form_container'>

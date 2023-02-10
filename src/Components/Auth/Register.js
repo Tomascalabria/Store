@@ -63,7 +63,7 @@ const handleEmailChange=(e)=>{
     <>
     <div className=' authContainer'>
   <div className='login_banner auth_banner' >
-    <img className='auth_banner_img' src={login_banner} alt='login banner '/>
+    <img className='auth_banner_img' src={login_banner} alt='register banner. Registrate en La Tiendita y se parte de la comunidad mas grande de personas con estilo.'/>
    </div>
     
     <div className='login_form_container auth_form_container'>

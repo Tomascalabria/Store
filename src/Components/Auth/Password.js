@@ -23,7 +23,7 @@ export const Password=({props})=>{
                 <div className="password_container">
                     <input type={passwordType} onChange={handlePasswordChange} value={props.password} name="password" className="login_form_password_input auth_password_input" placeholder="CONTRASEÑA" />
                      <button className="show_password_btn" onClick={togglePassword}>
-                     { passwordType==="password"? <img className="show_password_icon" alt="show password logo.png"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
+                     { passwordType==="password"? <img className="show_password_icon" alt="show password logo.png - Hace click y conoce tu contrasñea"  src={show_password_icon} /> :<img className="hide_password_icon" alt="hide password logo.png" src={hide_password_icon} />  }
                      </button>
                 </div>
 
