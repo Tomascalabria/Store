@@ -202,6 +202,7 @@ text-align: center;
 .cart_product_img{
   width: 60px;
   height: 60px;
+  position: relative;
 }
 .cart_product_price_container{
   display: flex;

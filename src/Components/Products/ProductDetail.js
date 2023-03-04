@@ -2,24 +2,41 @@ import React, { useEffect, useState,useRef, useContext } from 'react'
 import { CartContext } from '../../Context/Cart/CartContext';
 export const ProductDetail = ({props}) => {
   const ref = useRef(null);
-const {addToCart,totalCost}=useContext(CartContext)
+const {addToCart,totalCost,cart,setCart}=useContext(CartContext)
 const [selectedSize, setSelectedSize] = useState(false);
-const [warningMessage,setWarningMessage]=('')
+const [warningMessage,setWarningMessage]=useState('')
 
 
-const addItemToCart=()=>{
-if(!selectedSize){
-  setWarningMessage('Tenes que seleccionar un talle primero')
-}
-else{
-
-  let product={
-    ...props,size:selectedSize,quantity:1
+const addItemToCart = () => {
+  if (!selectedSize) {
+ 
+    setWarningMessage("Tenes que seleccionar un talle primero");
+    setTimeout(() => {
+      setWarningMessage('')
+    
+}, 1200);
+   
+      return;
   }
-  
-  addToCart(product)
-}
-}
+
+  let product = {
+      ...props,
+      size: selectedSize,
+      quantity: 1,
+  };
+
+  if (product.quantity > product.stock[product.size]) {
+    setTimeout(()=>{
+
+      setWarningMessage("El monto seleccionado excede el stock disponible");
+    },1200)  
+    setWarningMessage('')
+      return;
+  }
+
+  addToCart(product);
+};
+
 totalCost()
 
 const handleSizeSelection=(e)=>{

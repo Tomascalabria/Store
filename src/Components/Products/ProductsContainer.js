@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { json, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './Products.css'
 import { ProductCard } from './ProductCard'
 import { Loader } from './Loader'
@@ -9,6 +9,7 @@ import { OosProductCard } from './OutOfStock/OosProductCard'
 export const  ProductsContainer = () => {
 const [products,setProducts]=useState([])
 const [loader,setLoader]=useState([false])
+const [search,setSearch]=useState('')
 const {category}=useParams()
 
 const getProducts =async()=>{   
@@ -26,12 +27,23 @@ const response= await axios({
     console.log(err)
 })
 }
-useEffect(()=>{
 
+
+const searchProducts=(e)=>{
+const search=e.target.value
+setSearch(search)
+let response=products.filter((item)=>{return item.product_name.includes(search)||item.description.includes(search)})
+
+return setProducts(response)
+
+}
+
+useEffect(()=>{
     getProducts()
 },[category])
 
 let item=products.filter((product)=>{return product.category_name===category})
+
 
   return (
     <>
@@ -41,20 +53,19 @@ loader?
     <Loader/>:
     <>
   <div className='products_inner_container'>
-   {item.length===0 ?
+{item.length===0?
+  <>
+  <div className='no_products_container'>
+  
+  <h2 className='no_items_alert' >Estamos renovando los productos de esta categoria.</h2>
+  </div>
+  </>
 
-
-    <>
-    <div className='no_products_container'>
-
-    <h2 className='no_items_alert' >Estamos renovando los productos de esta categoria.</h2>
-    </div>
-    </>
 
   :
 <>
        <div className='product_search'> 
-      <input className='product_search_bar' title='search' placeholder='Buscar: Air Max'></input>
+      <input className='product_search_bar' title='search' placeholder='Buscar: Air Max' value={search} onChange={(e)=>searchProducts(e)} ></input>
 
     </div>
     <div className='product_filtering'>

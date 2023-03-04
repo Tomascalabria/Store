@@ -14,7 +14,7 @@ const init = JSON.parse(sessionStorage.getItem('cart'))||[]
         return p.product_id === item.product_id && p.size === item.size;
       })
     
-      if (existingProduct&&existingProduct.stock[item.size]>=existingProduct.quantity) {
+      if (existingProduct&&existingProduct.stock[item.size]>existingProduct.quantity) {
         existingProduct.quantity = existingProduct.quantity + 1;
         setCart([...cart]);
         sessionStorage.setItem("cart", JSON.stringify(cart));
@@ -40,26 +40,30 @@ const init = JSON.parse(sessionStorage.getItem('cart'))||[]
   @param {Object} item - The item to be added to the cart.
   @returns {Array} - Returns an updated cart with the added item.
   */
-    const addToCart=(product)=> {
-  
-    const cartProductIndex = cart.findIndex(
-      (cartProduct) => cartProduct.id === product.id && cartProduct.size === product.size
-    )
-    if (cartProductIndex >= 0) {
-      const updatedCart = [...cart]
-      updatedCart[cartProductIndex].quantity++
-      setCart(updatedCart)
-    } else {
-      const differentSizeProductIndex = cart.findIndex(
-        (cartProduct) => cartProduct.id === product.id
-      )
-      if (differentSizeProductIndex >= 0) {
-        setCart([...cart,product])
-      } else {
-        setCart([...cart,product])
-      }
+  const addToCart = (product) => {
+    const cartProduct = cart.find(
+        (item) => item.id === product.id && item.size === product.size
+    );
+    if (!cartProduct) {
+        if (product.quantity > product.stock[product.size]) {
+            return;
+        }
+        setCart([...cart, product]);
+        return;
     }
+
+    if (cartProduct.quantity >=cartProduct.stock[cartProduct.size]) {
+        return;
     }
+
+    let updatedCart = [...cart];
+    const cartProductIndex = updatedCart.findIndex(
+        (item) => item.id === product.id && item.size === product.size
+    );
+    updatedCart[cartProductIndex].quantity++;
+    setCart(updatedCart);
+};
+
   
   const clearCart = () => {
     setCart([])
@@ -121,6 +125,7 @@ useEffect(() => {
       return( 
       <CartContext.Provider value={{
           addToCart,
+          setCart,  
           calculateCartItems,
           removeItem,
           cart,
