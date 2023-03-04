@@ -1,0 +1,1 @@
+Hay que revisar la funcion buscar.\nAl no ser una base de productos tan grande no sería necesario implementar un algoritmo de busqueda que haga esta mas eficiente sin embargo puede ser una opción para practicar esto.\nPor otra parte, hay que revisar el tema del renderizado a la hora de no encontrar productos ya que la barra de busqueda debiera permanecer
